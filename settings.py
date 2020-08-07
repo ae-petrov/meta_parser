@@ -5,7 +5,7 @@ import cherrypy
 
 
 class Tag(object):
-    """Class describes tags. Add new if necessary"""
+    """Class describes tags. Add new if necessary."""
     def __init__(self, name: str, regex: re.Pattern) -> None:
         if not isinstance(regex, re.Pattern):
             raise TypeError(f'"{regex}" in "{name}" '
@@ -14,16 +14,17 @@ class Tag(object):
         self.name = name
         self.regex = regex
 
-
+# Initializate tags here
 og = Tag('Open Graph', re.compile(r"^og:[\S]*$"))
 fb = Tag('Facebook', re.compile(r"^fb:[\S]*$"))
 tw = Tag('Twitter', re.compile(r"^twitter:[\S]*$"))
 al = Tag('Mobile', re.compile(r"^al:[\S]*$"))
 vk = Tag('Vkontakt', re.compile(r"^vk:[\S]*$"))
 
+# Add initialized tags here to use them in process
 SELECTED_TAGS = (og, fb, tw, al, vk,)
 
-
+# CherryPy server configuration
 WEBSERVICE_CONF = {
     '/': {
             'tools.sessions.on': True,
@@ -39,6 +40,7 @@ WEBSERVICE_CONF = {
     },
 }
 
+# Default message for handling not GET methods
 DEFAULT_MESSAGE = 'Method not allowed, use GET Method. ' \
                   'Use following pattern: ' \
                   'http://app_domain/?url=<URL_YOU_WANT_TO_PARSE>'

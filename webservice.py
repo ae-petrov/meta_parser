@@ -9,14 +9,17 @@ from settings import DEFAULT_MESSAGE, WEBSERVICE_CONF
 class SimplePage(object):
     @cherrypy.expose
     def index(self):
+        """Rendering index page."""
         return open('template/index.html')
 
     @cherrypy.expose
     def collect(self, url):
+        """Runs after collect tag button is pressed."""
         return json.dumps(processing_url(url), indent=4, ensure_ascii=False)
 
     @cherrypy.expose
     def default(self, attr=''):
+        """Handle all other not included in methods above and returns index page."""
         return self.index()
 
 
@@ -26,6 +29,7 @@ class WebServiceAPI(object):
     @cherrypy.tools.json_in()
     @cherrypy.tools.json_out()
     def GET(self, url=None):
+        """Main method for API. Returns JSON or error message."""
         url = cherrypy.request.params.get('url')
         if url:
             return processing_url(url)
@@ -35,18 +39,22 @@ class WebServiceAPI(object):
 
     @cherrypy.tools.json_out()
     def POST(self, url=None):
+        """Handling other methods."""
         return DEFAULT_MESSAGE
 
     @cherrypy.tools.json_out()
     def PUT(self, url=None):
+        """Handling other methods."""
         return DEFAULT_MESSAGE
 
     @cherrypy.tools.json_out()
     def DELETE(self, url=None):
+        """Handling other methods."""
         return DEFAULT_MESSAGE
 
     @cherrypy.tools.json_out()
     def PATCH(self, url=None):
+        """Handling other methods."""
         return DEFAULT_MESSAGE
 
 

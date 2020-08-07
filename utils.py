@@ -1,7 +1,7 @@
 import re
 
 
-regex = re.compile(
+URL_pattern = re.compile(
         r'^(?:http|ftp)s?://'
         r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)'
         r'+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'
@@ -11,8 +11,9 @@ regex = re.compile(
         r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 
 
-def url_is_valid(url):
+def url_is_valid(url: str) -> bool:
+    """Check if URL valid or not."""
     if url == '':
         return False
     else:
-        return (re.match(regex, url))
+        return (re.match(URL_pattern, url))

@@ -10,6 +10,7 @@ from utils import url_is_valid
 
 class MetaHTMLParser(HTMLParser):
     def __init__(self, url: str, *args, **kwargs) -> None:
+        """Describes MetaHTMLParser entity."""
         self.all_nodes = {url: {}}
 
         for item in SELECTED_TAGS:
@@ -19,7 +20,7 @@ class MetaHTMLParser(HTMLParser):
         super().__init__(*args, **kwargs)
 
     def handle_starttag(self, tag: str, attrs: List) -> None:
-        """Handle and process tag section if it is equal to 'meta'"""
+        """Handle and process tag section if it is equal to 'meta'."""
         if tag == 'meta':
             for item in SELECTED_TAGS:
                 if item.regex.fullmatch(attrs[0][1]):
@@ -28,7 +29,7 @@ class MetaHTMLParser(HTMLParser):
 
 
 def processing_url(url: str) -> Union[Dict, str]:
-    """Processing url, chek if it is valid and parsing it"""
+    """Processing url, chek if it is valid and parsing it."""
     if not url_is_valid(url):
         message = 'Invalid URL'
 
