@@ -22,11 +22,14 @@ class MetaHTMLParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: List) -> None:
         """Handle and process tag section if it is equal to 'meta'."""
         if tag == 'meta':
+            meta_tag = dict(attrs)
+
             for item in SELECTED_TAGS:
+
                 for i in range(len(attrs)):
                     if item.regex.fullmatch(attrs[i][1]):
                         item_node = self.all_nodes[self.url][item.name]
-                        item_node[attrs[i][1]] = attrs[i+1][1]
+                        item_node[attrs[i][1]] = meta_tag.get('content')
 
 
 def processing_url(url: str) -> Union[Dict, str]:
