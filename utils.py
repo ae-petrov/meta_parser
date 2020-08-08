@@ -21,6 +21,7 @@ def url_is_valid(url: str) -> bool:
 
 
 def render_page(template: str, result=None) -> str:
+    """Render html page with replacing placeholder $message with result"""
     with open(template, "r") as html:
         html_string = html.read()
         html_template = Template(html_string)

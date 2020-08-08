@@ -18,14 +18,16 @@
 
         <div class="row mt-5 justify-content-center">
 
-            <div class="col-sm col-md-8 col-lg-6 col-xl-6">
+            <div class="col-sm col-md-9 col-lg-10 col-xl-10">
                 <h1>Plain JSON result</h1>
-                <div class="alert alert-warning" role="alert" id="myInput">
-                    $message
-                </div>
-                <button type="button" class="btn btn-primary" onclick="copyToClipboard('#myInput')">Copy to
+                <button type="button" class="btn btn-primary" onclick="copyToClipboard('#Textarea')">Copy to
                     clipboard</button>
                 <a href="/" role="button" class="btn btn-secondary" aria-pressed="True">Go Back</a>
+                <div class="form-group">
+                    <label for="Textarea"></label>
+                    <textarea class="form-control" id="Textarea" rows="33"></textarea>
+                </div>
+                <small id="urlHelp" class="form-text text-muted">Powered by Alexey Petrov</small>
             </div>
         </div>
     </div>
@@ -46,7 +48,7 @@
         var myData = $message;
 
         var textedJson = JSON.stringify(myData, undefined, 4);
-        $('#textarea').text(textedJson);
+        $('#Textarea').text(textedJson);
     </script>
 
 </body>

@@ -38,8 +38,8 @@ class WebServiceAPI(object):
         if url:
             return processing_url(url)
         else:
-            return '''No URL key in request. Use following pattern:
-                      http://app_domain/api/?url=<URL_YOU_WANT_TO_PARSE>'''
+            return 'No URL key in request. Use following pattern:' \
+                   'http://app_domain/api/?url=<URL_YOU_WANT_TO_PARSE>'
 
     @cherrypy.tools.json_out()
     def POST(self, url=None):
