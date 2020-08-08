@@ -23,9 +23,10 @@ class MetaHTMLParser(HTMLParser):
         """Handle and process tag section if it is equal to 'meta'."""
         if tag == 'meta':
             for item in SELECTED_TAGS:
-                if item.regex.fullmatch(attrs[0][1]):
-                    item_node = self.all_nodes[self.url][item.name]
-                    item_node[attrs[0][1]] = attrs[1][1]
+                for i in range(len(attrs)):
+                    if item.regex.fullmatch(attrs[i][1]):
+                        item_node = self.all_nodes[self.url][item.name]
+                        item_node[attrs[i][1]] = attrs[i+1][1]
 
 
 def processing_url(url: str) -> Union[Dict, str]:
@@ -48,16 +49,5 @@ def processing_url(url: str) -> Union[Dict, str]:
             html_parser.feed(response.text)
 
             message = html_parser.all_nodes
-            if message.get(url) is not None:
-                for tag in SELECTED_TAGS:
-                    if message[url][tag.name] == {}:
-                        message[url][tag.name] = 'No tags were find of ' \
-                                                 'this type'
-            else:
-                message = 'Error. Well, something goes wrong. ' \
-                          'Check please URL you have entered. ' \
-                          'The best way is to use copy-paste ' \
-                          'from URL filed from browser. ' \
-                          'Please try again.'
 
     return message
