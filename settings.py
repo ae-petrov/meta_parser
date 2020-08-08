@@ -14,6 +14,7 @@ class Tag(object):
         self.name = name
         self.regex = regex
 
+
 # Initializate tags here
 og = Tag('Open Graph', re.compile(r"^og:[\S]*$"))
 fb = Tag('Facebook', re.compile(r"^fb:[\S]*$"))
@@ -41,6 +42,6 @@ WEBSERVICE_CONF = {
 }
 
 # Default message for handling not GET methods
-DEFAULT_MESSAGE = 'Method not allowed, use GET Method. ' \
-                  'Use following pattern: ' \
-                  'http://app_domain/?url=<URL_YOU_WANT_TO_PARSE>'
+DEFAULT_MESSAGE = '''Method not allowed, use GET Method.
+                     Use following pattern:
+                     http://open-grap.gq/api/?url=<URL_YOU_WANT_TO_PARSE>'''

@@ -1,4 +1,5 @@
 import re
+from string import Template
 
 
 URL_pattern = re.compile(
@@ -17,3 +18,11 @@ def url_is_valid(url: str) -> bool:
         return False
     else:
         return (re.match(URL_pattern, url))
+
+
+def render_page(template: str, result=None) -> str:
+    with open(template, "r") as html:
+        html_string = html.read()
+        html_template = Template(html_string)
+
+    return html_template.safe_substitute(message=result)
