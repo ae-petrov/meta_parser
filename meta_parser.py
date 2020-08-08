@@ -41,15 +41,20 @@ def processing_url(url: str) -> Union[Dict, str]:
 
         if response.status_code != 200:
             message = f'HTTP response code {response.status_code},'\
-                       ' reason {response.reason}'
+                      f' reason {response.reason}'
 
         else:
             html_parser = MetaHTMLParser(url=response.url)
             html_parser.feed(response.text)
 
             message = html_parser.all_nodes
-            for tag in SELECTED_TAGS:
-                if message[url][tag.name] == {}:
-                    message[url][tag.name] = 'No tags were find of this type'
+            if message.get(url) is not None:
+                for tag in SELECTED_TAGS:      
+                        if message[url][tag.name] == {}:
+                            message[url][tag.name] = 'No tags were find of this type'
+            else:
+                message = 'Error. Well, something goes wrong. Check please URL ' \
+                          'you have entered. The best way is to use copy-paste ' \
+                          'from URL filed from browser. Please try again.'
 
     return message
