@@ -10,7 +10,6 @@ class Tag(object):
         if not isinstance(regex, re.Pattern):
             raise TypeError(f'"{regex}" in "{name}" '
                             f'Tag is not regular expression.')
-
         self.name = name
         self.regex = regex
 
