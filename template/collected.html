@@ -17,6 +17,12 @@
     <div class="container">
 
         <div class="row mt-5 justify-content-center">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="copied">
+                Result copied to clipboard.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
             <div class="col-sm col-md-9 col-lg-10 col-xl-10">
                 <h1>Plain JSON result</h1>
@@ -28,12 +34,22 @@
                     <textarea class="form-control" id="Textarea" rows="33"></textarea>
                 </div>
                 <small id="urlHelp" class="form-text text-muted">Powered by Alexey Petrov</small>
+                <small id="urlHelp" class="form-text text-muted">Github: <a
+                        href='https://github.com/ae-petrov'>https://github.com/ae-petrov</a></small>
             </div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
     <script>
         function copyToClipboard(element) {
             var $temp = $("<input>");
@@ -41,10 +57,16 @@
             $temp.val($(element).text()).select();
             document.execCommand("copy");
             $temp.remove();
+            $('#copied').show()
         }
     </script>
 
     <script>
+        $('#copied').hide();
+    </script>
+
+    <script>
+
         var myData = $message;
 
         var textedJson = JSON.stringify(myData, undefined, 4);

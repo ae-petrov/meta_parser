@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Open Graph tag parser</title>
+    <title>Open Graph tags processing</title>
 </head>
 
 <body class="bg-light">
@@ -19,27 +19,29 @@
         <div class="row mt-5 justify-content-center">
 
             <div class="col-sm col-md-8 col-lg-6 col-xl-6">
+                <h3>Service helps you to collect Open Graph layout of interested URL as JSON.
+                    <small class="form-text text-muted">Includes Open Graph, Facebook, Twitter, Mobile, VK tags. Just
+                        enter URL you need and press Collect Tags or Enter.</small>
+                </h3>
                 <form method="get" action="collect">
                     <div class="form-group">
                         <label for="InputURL">URL address</label>
                         <input type="text" name="url" class="form-control" id="InputURL" aria-describedby="urlHelp">
-                        <small id="urlHelp" class="form-text text-muted">Enter URL you want to get tags from. URL should
+                        <small id="urlHelp" class="form-text text-muted">URL should
                             begin from http:// or https://</small>
                         <br>
-                        <small id="urlHelp" class="form-text text-muted">API is available on /api/</small>
+                        <small id="urlHelp" class="form-text text-muted">Service API is available on /api/</small>
                         <small id="urlHelp" class="form-text text-muted">Use following pattern to make GET request:
-                            <br /> http://open-graph.gq/api/?url=URL_YOU_WANT_TO_PARSE</small>
+                            <br /> https://open-graph.gq/api/?url=URL_YOU_WANT_TO_PROCESS</small>
                         <br>
                         <small id="urlHelp" class="form-text text-muted">Powered by Alexey Petrov</small>
-
+                        <small id="urlHelp" class="form-text text-muted">Github: <a
+                                href='https://github.com/ae-petrov'>https://github.com/ae-petrov</a></small>
                     </div>
                     <button type="submit" class="btn btn-primary">Collect Tags</button>
                 </form>
             </div>
-
         </div>
-
-
     </div>
 
 </body>
