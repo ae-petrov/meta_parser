@@ -94,11 +94,11 @@ Service will return JSON response in following format:
 ```
 {
     "URL_YOU_WANT_TO_PROCESS": {
-        "Open Graph": {<tags>},
-        "Facebook": {<tags>},
-        "Twitter": {<tags>},
-        "Mobile": {<tags>},
-        "Vkontakt": {<tags>}
+        "Open Graph": {"og:tags": "<content>", },
+        "Facebook": {"fb:tags": "<content>", },
+        "Twitter": {"twitter:tags": "<content>", },
+        "Mobile": {"al:tags": "<content>", },
+        "Vkontakt": {"vk:tags": "<content>", }
     }
 }
 ```
