@@ -85,6 +85,24 @@ API usage is described below.
 
 When you launching webservice.py server is already running on your localhost. To make it public it is recommended to use Nginx for example.
 
+## API Usage
+Service is already deployed. You can use API in your app.
+GET requests only are allowed.
+Just make GET requests from your app following this pattern:
+*https://open-graph.gq/api/?url=<URL_YOU_WANT_TO_PROCESS>*
+Service will return JSON response in following format:
+```
+{
+    "URL_YOU_WANT_TO_PROCESS": {
+        "Open Graph": {<tags>},
+        "Facebook": {<tags>},
+        "Twitter": {<tags>},
+        "Mobile": {<tags>},
+        "Vkontakt": {<tags>}
+    }
+}
+```
+
 ## Built With
 
 * [CherryPy](https://cherrypy.org/) - Server side and API
