@@ -55,7 +55,8 @@ Now we are ready to create virtual environment. Following comand will create *ve
 python -m venv venv
 ```
 
-Activate your venv. After activation you should have (venv) sign before comand line. Check it out.
+Activate your venv. **After activation you should have (venv) sign before comand line. Check it out.**
+
 In case Windows user
 ```
 source venv/scripts/activate
