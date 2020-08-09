@@ -1,6 +1,6 @@
 # Open Graph processing
 
-This is Web-service which helps you to collect open graph tags from required URL. It includes Open Graph, Facebook, Twitter, Mobile, VK tags. Tags list may be expand via settings.py
+This web-service helps you to collect open graph tags from required URL. It includes Open Graph, Facebook, Twitter, Mobile, VK tags. Tags list may be expand via settings.py
 
 ## Deployed project available on
 [https://open-graph.gq](https://open-graph.gq)
