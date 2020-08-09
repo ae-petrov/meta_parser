@@ -2,6 +2,9 @@
 
 This is Web-service which helps you to collect open graph tags from required URL. It includes Open Graph, Facebook, Twitter, Mobile, VK tags. Tags list may be expand via settings.py
 
+## Deployed project available on
+[https://open-graph.gq](https://open-graph.gq)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -12,11 +15,11 @@ You need python 3.8 installed.
 
 ### Installation
 
-A step by step series of examples that tell you how to get a service running
+A step by step series of examples that tell you how to get a service running.
 
 #### Setup
 
-Change dir to dir you want project will be cloned
+Change or make dir where you want project will be cloned to.
 ```
 cd <your_project_dir>
 ```
@@ -26,7 +29,7 @@ Clone repository
 git clone https://github.com/ae-petrov/meta_parser.git
 ```
 
-Now you should have following structure. Project is in meta_parser folder.
+Now you should have following structure. Project is in meta_parser directory.
 ```
 ...<your_project_dir>/meta_parser
 ```
@@ -36,7 +39,7 @@ Project uses virtual environment. To install it change dir to project dir.
 cd meta_parser
 ```
 
-Make sure you are inside meta_parser directory
+Make sure you are inside meta_parser directory by this comand.
 ```
 pwd
 ```
