@@ -23,6 +23,10 @@ Change or make dir where you want project will be cloned to.
 ```
 cd <your_project_dir>
 ```
+or make it
+```
+mkdir <your_project_dir>
+```
 
 Clone repository
 ```
